@@ -21,10 +21,22 @@ body {
     padding: 50px;
 }
 
-
+/* when show nav is activated, main page moves away, like a page in a book */
 .container.show-nav{
     transform: rotate(-20deg);
 }
+
+/* when container has show-nav class, the nav list is to be visible */
+.container.show-nav + nav li{
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+/* when show nav is activated on container, this affects the circle */
+.container.show-nav .circle{
+    transform: rotate(-70deg);
+}
+
 
 .circle-container{
     position: fixed;
@@ -40,6 +52,7 @@ body {
     position: relative;
     transition: transform 0.5s linear;
 }
+
 
 .circle button{
     position: absolute;
@@ -105,11 +118,7 @@ nav ul li + li + li {
     transform: translateX(-200%);
 }
 
-/* when container has show-nav class, the nav list is to be visible */
-.container.show-nav + nav li{
-    transform: translateX(0);
-    transition-delay: 0.3s;
-}
+
 .content img{
     max-width: 100%;
 }
